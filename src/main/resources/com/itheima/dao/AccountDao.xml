@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.AccountDao">
+    <resultMap id="Map" type="com.itheima.domain.Account">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="money" column="money"></result>
+    </resultMap>
+    <select id="fainAll" resultMap="Map">
+    SELECT * FROM account;
+    </select>
+    <insert id="svaeAccount" parameterType="com.itheima.domain.Account">
+        insert into account (name,money) values (#{name},#{money});
+    </insert>
+</mapper>
